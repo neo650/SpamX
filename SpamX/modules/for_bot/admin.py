@@ -11,8 +11,8 @@ from .. import Owner, handler, Sudos
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import ChatAdminRequired, RightForbidden, RPCError, UserNotParticipant
-# from pyrogram.enums import ChatType
-from pyrogram import ChatType
+from pyrogram.enums import ChatType
+# from pyrogram import ChatType
 
 from RiZoeLX import Devs
 from RiZoeLX.functions import user_reason, user_only, get_user
