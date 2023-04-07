@@ -55,6 +55,39 @@ def clear(fast=False):
     else:
         sprint(spamx_logo, 0.01)
 
+# evn_vars = """
+# API_ID=
+# API_HASH=
+# OWNER_ID=
+# SUDO_USERS=
+# ALIVE_PIC=
+# ALIVE_MSG=
+# PING_MSG=
+# LOGS_CHANNEL=
+# DATABASE_URL=
+# CLIENT=
+# CLIENT2=
+# CLIENT3=
+# CLIENT4=
+# CLIENT5=
+# CLIENT6=
+# CLIENT7=
+# CLIENT8=
+# CLIENT9=
+# CLIENT10=
+# CLIENT11=
+# CLIENT12=
+# CLIENT13=
+# CLIENT14=
+# CLIENT15=
+# CLIENT16=
+# CLIENT17=
+# CLIENT18=
+# CLIENT19=
+# CLIENT20=
+# HNDLR=
+# """
+
 evn_vars = """
 API_ID=
 API_HASH=
@@ -67,24 +100,6 @@ LOGS_CHANNEL=
 DATABASE_URL=
 CLIENT=
 CLIENT2=
-CLIENT3=
-CLIENT4=
-CLIENT5=
-CLIENT6=
-CLIENT7=
-CLIENT8=
-CLIENT9=
-CLIENT10=
-CLIENT11=
-CLIENT12=
-CLIENT13=
-CLIENT14=
-CLIENT15=
-CLIENT16=
-CLIENT17=
-CLIENT18=
-CLIENT19=
-CLIENT20=
 HNDLR=
 """
 
@@ -158,74 +173,76 @@ def SpamX_Setup():
     if CLIENT3:
         print(f"{bcyan}Got it! Fill next value")
         os.system(f"dotenv set CLIENT3 {CLIENT3}")
-    CLIENT4 = input(f"\n{ask}Enter session or bot token of CLIENT4 or press enter: ")
-    if CLIENT4:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT4 {CLIENT4}")
-    CLIENT5 = input(f"\n{ask}Enter session or bot token of CLIENT5 or press enter: ")
-    if CLIENT5:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT5 {CLIENT5}")
-    CLIENT6 = input(f"\n{ask}Enter session or bot token of CLIENT6 or press enter: ")
-    if CLIENT6:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT6 {CLIENT6}")
-    CLIENT7 = input(f"\n{ask}Enter session or bot token of CLIENT7 or press enter: ")
-    if CLIENT7:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT7 {CLIENT7}")
-    CLIENT8 = input(f"\n{ask}Enter session or bot token of CLIENT8 or press enter: ")
-    if CLIENT8:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT8 {CLIENT8}")
-    CLIENT9 = input(f"\n{ask}Enter session or bot token of CLIENT9 or press enter: ")
-    if CLIENT9:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT9 {CLIENT9}")
-    CLIENT10 = input(f"\n{ask}Enter session or bot token of CLIENT10 or press enter: ")
-    if CLIENT10:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT10 {CLIENT10}")
-    CLIENT11 = input(f"\n{ask}Enter session or bot token of CLIENT11 or press enter: ")
-    if CLIENT11:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT11 {CLIENT11}")
-    CLIENT12 = input(f"\n{ask}Enter session or bot token of CLIENT12 or press enter: ")
-    if CLIENT12:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT12 {CLIENT12}")
-    CLIENT13 = input(f"\n{ask}Enter session or bot token of CLIENT13 or press enter: ")
-    if CLIENT13:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT13 {CLIENT13}")
-    CLIENT14 = input(f"\n{ask}Enter session or bot token of CLIENT14 or press enter: ")
-    if CLIENT14:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT14 {CLIENT14}")
-    CLIENT15 = input(f"\n{ask}Enter session or bot token of CLIENT15 or press enter: ")
-    if CLIENT15:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT15 {CLIENT15}")
-    CLIENT16 = input(f"\n{ask}Enter session or bot token of CLIENT16 or press enter: ")
-    if CLIENT16:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT16 {CLIENT16}")
-    CLIENT17 = input(f"\n{ask}Enter session or bot token of CLIENT17 or press enter: ")
-    if CLIENT17:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT17 {CLIENT17}")
-    CLIENT18 = input(f"\n{ask}Enter session or bot token of CLIENT18 or press enter: ")
-    if CLIENT18:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT18 {CLIENT18}")
-    CLIENT19 = input(f"\n{ask}Enter session or bot token of CLIENT19 or press enter: ")
-    if CLIENT19:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT19 {CLIENT19}")
-    CLIENT20 = input(f"\n{ask}Enter session or bot token of CLIENT20 or press enter: ")
-    if CLIENT20:
-        print(f"{bcyan}Got it! Fill next value")
-        os.system(f"dotenv set CLIENT20 {CLIENT20}")
+        
+    # CLIENT4 = input(f"\n{ask}Enter session or bot token of CLIENT4 or press enter: ")
+    # if CLIENT4:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT4 {CLIENT4}")
+    # CLIENT5 = input(f"\n{ask}Enter session or bot token of CLIENT5 or press enter: ")
+    # if CLIENT5:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT5 {CLIENT5}")
+    # CLIENT6 = input(f"\n{ask}Enter session or bot token of CLIENT6 or press enter: ")
+    # if CLIENT6:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT6 {CLIENT6}")
+    # CLIENT7 = input(f"\n{ask}Enter session or bot token of CLIENT7 or press enter: ")
+    # if CLIENT7:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT7 {CLIENT7}")
+    # CLIENT8 = input(f"\n{ask}Enter session or bot token of CLIENT8 or press enter: ")
+    # if CLIENT8:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT8 {CLIENT8}")
+    # CLIENT9 = input(f"\n{ask}Enter session or bot token of CLIENT9 or press enter: ")
+    # if CLIENT9:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT9 {CLIENT9}")
+    # CLIENT10 = input(f"\n{ask}Enter session or bot token of CLIENT10 or press enter: ")
+    # if CLIENT10:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT10 {CLIENT10}")
+    # CLIENT11 = input(f"\n{ask}Enter session or bot token of CLIENT11 or press enter: ")
+    # if CLIENT11:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT11 {CLIENT11}")
+    # CLIENT12 = input(f"\n{ask}Enter session or bot token of CLIENT12 or press enter: ")
+    # if CLIENT12:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT12 {CLIENT12}")
+    # CLIENT13 = input(f"\n{ask}Enter session or bot token of CLIENT13 or press enter: ")
+    # if CLIENT13:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT13 {CLIENT13}")
+    # CLIENT14 = input(f"\n{ask}Enter session or bot token of CLIENT14 or press enter: ")
+    # if CLIENT14:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT14 {CLIENT14}")
+    # CLIENT15 = input(f"\n{ask}Enter session or bot token of CLIENT15 or press enter: ")
+    # if CLIENT15:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT15 {CLIENT15}")
+    # CLIENT16 = input(f"\n{ask}Enter session or bot token of CLIENT16 or press enter: ")
+    # if CLIENT16:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT16 {CLIENT16}")
+    # CLIENT17 = input(f"\n{ask}Enter session or bot token of CLIENT17 or press enter: ")
+    # if CLIENT17:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT17 {CLIENT17}")
+    # CLIENT18 = input(f"\n{ask}Enter session or bot token of CLIENT18 or press enter: ")
+    # if CLIENT18:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT18 {CLIENT18}")
+    # CLIENT19 = input(f"\n{ask}Enter session or bot token of CLIENT19 or press enter: ")
+    # if CLIENT19:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT19 {CLIENT19}")
+    # CLIENT20 = input(f"\n{ask}Enter session or bot token of CLIENT20 or press enter: ")
+    # if CLIENT20:
+    #     print(f"{bcyan}Got it! Fill next value")
+    #     os.system(f"dotenv set CLIENT20 {CLIENT20}")
+        
     database_url = input(f"\n{ask}Enter Postgres database url or press enter: ")
     if database_url:
         if 'postgresql' in database_url or 'postgres' in database_url:

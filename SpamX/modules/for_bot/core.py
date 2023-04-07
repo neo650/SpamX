@@ -8,7 +8,8 @@ from SpamX import start_time
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from pyrogram.enums import ChatType
+# from pyrogram.enums import ChatType
+from pyrogram import ChatType
 
 from RiZoeLX.data import Variables, Variables_text
 from RiZoeLX import Devs
