@@ -5,19 +5,19 @@ from pyrogram import Client
    
 if  ":" in CLIENT:
    RiZoeL = Client('SpamX', api_id=API_ID, api_hash=API_HASH, bot_token=CLIENT, plugins=dict(root="SpamX.modules.for_bot"))
-   print("SpamX - [INFO]: Bot token 1 Found")
+   print("SpamX - [INFO]: Bot token 1 Found. SpamX.modules.for_bot")
 else:
    RiZoeL = Client('CLIENT', api_id = API_ID, api_hash = API_HASH, session_string=CLIENT, plugins=dict(root="SpamX.modules.for_id"))
-   print("SpamX - [INFO]: Client 1 Found")
+   print("SpamX - [INFO]: Client 1 Found. SpamX.modules.for_id")
 
 
 if CLIENT2:
    if ":" in CLIENT2:
       RiZoeL2 = Client('SpamX2', api_id=API_ID, api_hash=API_HASH, bot_token=CLIENT2, plugins=dict(root="SpamX.modules.for_bot"))
-      print("SpamX - [INFO]: Bot token 2 Found")
+      print("SpamX - [INFO]: Bot token 2 Found. SpamX.modules.for_bot")
    else:
       RiZoeL2 = Client('CLIENT2', api_id = API_ID, api_hash = API_HASH, session_string=CLIENT2, plugins=dict(root="SpamX.modules.for_id"))
-      print("SpamX - [INFO]: Client 2 Found")
+      print("SpamX - [INFO]: Client 2 Found. SpamX.modules.for_id")
 else:
    RiZoeL2 = None
          
