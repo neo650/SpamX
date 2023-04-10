@@ -3,7 +3,8 @@
    ( • .•)
    />❤️ 
 """
-import os, sys, asyncio, psutil, cpuinfo, platform
+import os, sys, asyncio, psutil, platform
+# import os, sys, asyncio, psutil, cpuinfo, platform
 from .. import Sudos, handler, Alive, __version__, Owner, DATABASE_URL
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -68,13 +69,13 @@ async def SpamX_(SpamX: Client, message: Message):
         ram = "Unknown"
     spamx_reply += f"**Ram:** {ram} \n"
 
-    try:
-        cpuInfo = cpuinfo.get_cpu_info()['brand_raw']
-        cpuUsage = psutil.cpu_percent(interval=1)
-        cpu = f"{cpuInfo} ({cpuUsage}%)"
-    except:
-        cpu = "Unknown"
-    spamx_reply += f"**CPU:** {cpu} \n"
+    # try:
+    #     cpuInfo = cpuinfo.get_cpu_info()['brand_raw']
+    #     cpuUsage = psutil.cpu_percent(interval=1)
+    #     cpu = f"{cpuInfo} ({cpuUsage}%)"
+    # except:
+    #     cpu = "Unknown"
+    # spamx_reply += f"**CPU:** {cpu} \n"
 
     try:
         os = f"{platform.system()} - {platform.release()} ({platform.machine()})"
