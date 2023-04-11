@@ -9,8 +9,10 @@ __version__ = __version__
 
 
 ping_msg = PING_MSG if PING_MSG else "SpamX"
-pic = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph//file/08445817174872b47cef8.jpg"
-amsg = ALIVE_MSG if ALIVE_MSG else "SpamX - by RiZoeLX"
+pic = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/9827c9802c4c9a6ebbb8b.jpg"
+amsg = ALIVE_MSG if ALIVE_MSG else "lalunalaluna"
+# message = "❄️❄️ yayo ❄️❄️ \n 1g -> 15k \n dt reyk \n DROP A DM \n +3547644179"
+message = "+3547644179"
 
 try:
    sah = RiZoeL.get_users(OWNER_ID)
@@ -22,18 +24,41 @@ class Alive:
      Pic = pic
      
      msg = f"""
-**⁂ {amsg} ⁂**
-
+     
 ━───────╯•╰───────━
-➠ **Master:** {owner_mention}
-➠ **Python Version:** `{platform.python_version()}`
-➠ **SpamX Version:** `{__version__}`
-➠ **Pyrogram Version:** `{pyro_vr}`
-➠ **pyRiZoeLX Version:** `{pip_vr}`
-➠ **Channel:** @RiZoeLX
+
+➠ YAYO REYKJAVÍK
+
+❄️❄️  1g - 16k ISK  ❄️❄️
+❄️❄️  2g - 30k ISK  ❄️❄️
+❄️❄️  3g - 45k ISK  ❄️❄️
+
+➠ CALL OR DM
+{message} 
+
+use Signal for faster response
+
+➠ CALL OR DM
+{message} 
+
+➠ YAYO REYKJAVÍK
+
 ━───────╮•╭───────━
-➠ **Source Code:** [•Repo•](https://github.com/RiZoeLX/SpamX)
+
      """
+     
+#      msg = f"""
+# **⁂ {amsg} ⁂**
+
+# ━───────╯•╰───────━
+# ➠ **Master:** {owner_mention}
+# ➠ **Python Version:** `{platform.python_version()}`
+# ➠ **SpamX Version:** `{__version__}`
+# ➠ **Pyrogram Version:** `{pyro_vr}`
+# ➠ **pyRiZoeLX Version:** `{pip_vr}`
+# ➠ **Channel:** @RiZoeLX
+# ━───────╮•╭───────━
+#      """
 
 handler = HNDLR
 Owner = int(OWNER_ID)
