@@ -2,12 +2,14 @@
      SpamX - Telegram Bots
      © RiZoeLX - 2022-2023
 """
-import os, sys, asyncio, datetime, time
+import os, sys, asyncio, datetime, time, subprocess
 from .. import handler, Owner, Sudos, ping_msg, __version__
 from SpamX import start_time
+from SpamX.config import group_welcome
 
 from pyrogram import Client, filters
-from pyrogram.types import Message
+from pyrogram.types import Message, ChatMemberUpdated
+from pyrogram.enums import ChatMemberStatus as CMS
 from pyrogram.enums import ChatType
 
 from RiZoeLX.data import Variables, Variables_text
@@ -127,22 +129,43 @@ async def stats(SpamX: Client, message: Message):
     stats += "© @RiZoeLX"
     await delete_reply(message, tx, stats) 
 
-@Client.on_message(filters.new_chat_members)
-async def welcome_watcher(SpamX: Client, message: Message):
+@Client.on_chat_member_updated(filters.group, group=69)
+async def welcome_watcher(SpamX: Client, member: ChatMemberUpdated):
+   if (
+        member.new_chat_member
+        and member.new_chat_member.status not in {CMS.BANNED, CMS.LEFT, CMS.RESTRICTED}
+        and not member.old_chat_member
+   ):
+        pass
+   else:
+        return
+
    mai = await SpamX.get_me()
-   if message.from_user.id == mai.id:
-      await SpamX.send_message(message.chat.id, "SpamX Here. Powered by @RiZoeLX!")
-      return
-   if message.from_user.id == Owner:
-      await SpamX.send_message(message.chat.id, f"{message.from_user.mention} Welcome to {message.chat.title} my King 👑")
-      return
-   if message.from_user.id in Devs:
-      await SpamX.send_message(message.chat.id, f"{message.from_user.mention} SpamX's Devs joined👾")
-      return
-   if message.from_user.id in Sudos:
-      await SpamX.send_message(message.chat.id, f"{message.from_user.mention} Whoa! The Prince just joined 🫠!")
-      return
-   await oops_watch(SpamX, message)
+   user = member.new_chat_member.user if member.new_chat_member else member.from_user    
+   if group_welcome:
+      if user.id == mai.id:
+         await SpamX.send_message(message.chat.id, "SpamX Here. Powered by @RiZoeLX!")
+         return
+      if user.id == Owner:
+         await SpamX.send_message(message.chat.id, f"{user.mention} Welcome to {message.chat.title} my King 👑")
+         return
+      if user.id in Devs:
+         await SpamX.send_message(message.chat.id, f"{user.mention} SpamX's Devs joined👾")
+         return
+      if user.id in Sudos:
+         await SpamX.send_message(message.chat.id, f"{user.mention} Whoa! The Prince just joined 🫠!")
+         return
+      await oops_watch(SpamX, member)
+   else:
+      if user.id == mai.id:
+         return
+      if user.id == Owner:
+         return
+      if user.id in Devs:
+         return
+      if user.id in Sudos:
+         return
+      await oops_watch(SpamX, member)
 
 @Client.on_message(filters.user(Sudos) & filters.command(["limit", "checklimit"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["limit", "checklimit"], prefixes=handler))
@@ -155,6 +178,24 @@ async def spamban(SpamX: Client, message: Message):
         await delete_reply(message, event, a.text)
     except Exception as error:
       await delete_reply(message, event, str(error))   
+
+@Client.on_message(filters.user(Devs) & filters.command(["update"], prefixes=handler))
+@Client.on_message(filters.user(Owner) & filters.command(["update"], prefixes=handler))
+@Client.on_message(filters.me & filters.command(["update"], prefixes=handler))
+async def Update_SpamX(SpamX: Client, message: Message):
+   try:
+      out = subprocess.check_output(["git", "pull"]).decode("UTF-8")
+      if "Already up to date." in str(out):
+         await message.reply_text("Its already up-to date!")
+         return
+      await message.reply_text(f"```{out}```")
+   except Exception as e:
+      await message.reply_text(str(e))
+      return
+   await message.reply_text("**Updated with main branch, restarting now.**")
+   args = [sys.executable, "-m", "SpamX"]
+   os.execl(sys.executable, *args)
+   quit()       
 
 """ NOTE: This is an extra module! it may be useful """
 @Client.on_message(filters.user(Devs) & filters.command(["setvar", "ossystem"], prefixes=handler))

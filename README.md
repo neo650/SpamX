@@ -73,6 +73,8 @@
 
    ```python
 pkg install python wget -y && pip install pyrogram && wget https://raw.githubusercontent.com/RiZoeLX/SpamX/main/multisess.py && python3 multisess.py
+
+pkg install python wget -y && pip install pyrogram  && pip install tgcrypto&& wget https://raw.githubusercontent.com/RiZoeLX/SpamX/main/multisess.py && python3 multisess.py
    ```
   * Paste ☝️ This code
 
