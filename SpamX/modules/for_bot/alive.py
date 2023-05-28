@@ -19,6 +19,7 @@ async def alive(SpamX: Client, message: Message):
     if ".jpg" in Alive.Pic or ".png" in Alive.Pic:
        await SpamX.send_photo(
              message.chat.id, 
+            #  "-1629169280", 
              Alive.Pic, 
              caption=Alive.msg)
     if ".mp4" in Alive.Pic or ".MP4," in Alive.Pic:

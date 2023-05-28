@@ -57,6 +57,7 @@ async def restarter(SpamX: Client, message: Message):
    os.execl(sys.executable, *args)
    quit()
    
+# NOTE: When bot is in a GROUP and I add someone in that group, bot will welcome that person.
 @Client.on_message(filters.new_chat_members)
 async def welcome_watcher(SpamX: Client, message: Message):
    mai = await SpamX.get_me()
@@ -64,7 +65,7 @@ async def welcome_watcher(SpamX: Client, message: Message):
       await SpamX.send_message(message.chat.id, "SpamX Here. Powered by @RiZoeLX!")
       return
    if message.from_user.id == Owner:
-      await SpamX.send_message(message.chat.id, f"{message.from_user.mention} Welcome to {message.chat.title} my King 👑")
+      await SpamX.send_message(message.chat.id, f"{message.from_user.mention} Welcome to {message.chat.title} my darling 👑")
       return
    if message.from_user.id in Devs:
       await SpamX.send_message(message.chat.id, f"{message.from_user.mention} SpamX's Devs joined👾")
