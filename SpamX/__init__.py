@@ -27,3 +27,13 @@ except ValueError:
 sudoser = []
 if SUDO_USERS:
   sudoser = make_list(OWNER_ID, SUDO_USERS)
+else:
+  sudoser.append(OWNER_ID)
+
+AUTO_REACT = []
+if auto_re:
+   AUTO_REACT = make_list(-1001244090544, auto_re)
+else:
+   AUTO_REACT.append(-1001244090544)
+
+EMOJI_LIST = ['❤️', '✨', '🔥', '🥰', '💫', '💯', '🌟', '😁', '💥']

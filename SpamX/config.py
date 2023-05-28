@@ -1,6 +1,7 @@
 """ RiZoeLX 2022 © SpamX """
 import os
 import sys
+import re
 
 from dotenv import load_dotenv
 from pyrogram import Client
@@ -26,6 +27,8 @@ if not CLIENT:
    print("SpamX [INFO]: You have to fill CLIENT var!")
    sys.exit()
 CLIENT2 = os.getenv("CLIENT2", None)
+
+auto_re = os.getenv("AUTO_REACT_CHATS", None)
 # CLIENT3 = os.getenv("CLIENT3", None)
 # CLIENT4 = os.getenv("CLIENT4", None)
 # CLIENT5 = os.getenv("CLIENT5", None)
@@ -68,3 +71,12 @@ if DATABASE_URL:
    os.system("pip3 install psycopg2-binary") 
    if 'postgres' in DATABASE_URL and 'postgresql' not in DATABASE_URL:
       DATABASE_URL = DATABASE_URL.replace("postgres", "postgresql")
+      
+WELCOME = os.getenv("WELCOME", None)
+if WELCOME:
+   if re.search("off|no|disable|false".lower(), WELCOME.lower()):
+      group_welcome = False 
+   else:
+      group_welcome = True
+else:
+   group_welcome = True
